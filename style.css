@@ -324,11 +324,32 @@ h1, h2, h3{
   letter-spacing: 0.04em;
 }
 
-.home__hero p{
+.home__hero .home__subtitle{
+  max-width: 32em;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  margin: 1.4rem 0 0;
+}
+
+.home__hero .home__description{
   max-width: 32em;
   color: var(--color-text-muted);
   font-size: 0.95rem;
   letter-spacing: 0.03em;
+  margin-top: 1.6rem;
+}
+
+.gallery-label{
+  margin-top: auto;
+  padding: 2rem var(--gutter) 0;
+  text-align: center;
+  font-size: 0.68rem;
+  letter-spacing: 0.32em;
+  text-transform: lowercase;
+  color: var(--color-text-muted);
 }
 
 /* ----------------------------------------------------------------
