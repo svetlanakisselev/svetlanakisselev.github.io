@@ -464,6 +464,12 @@ h1, h2, h3{
 
 .piece__label p{ color: var(--color-text-muted); font-size: 0.95rem; }
 
+.piece__label .piece__technical{
+  font-style: italic;
+  margin-top: 1.2rem;
+  line-height: 1.75;
+}
+
 /* ----------------------------------------------------------------
    8. WAITLIST MODULE  (repeated at the foot of Collection & Contact —
       deliberately NOT part of the main navigation)
