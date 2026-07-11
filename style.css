@@ -110,6 +110,8 @@ h1, h2, h3{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem; /* guarantees breathing room between wordmark and nav at any width */
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 2rem var(--gutter) 1.5rem;
