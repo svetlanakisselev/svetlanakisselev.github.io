@@ -360,11 +360,12 @@ h1, h2, h3{
 .home__hero h1{
   font-size: clamp(1.6rem, 3.5vw, 2.4rem);
   letter-spacing: 0.04em;
+  color: var(--color-text-muted);
 }
 
 .home__hero .home__subtitle{
   max-width: 32em;
-  color: var(--color-text);
+  color: var(--color-text-muted);
   font-family: var(--font-body);
   font-weight: 400;
   font-size: clamp(1rem, 1.9vw, 1.2rem);
