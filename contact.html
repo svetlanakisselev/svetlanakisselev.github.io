@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Svetlana Kisselev</title>
+<meta name="description" content="Contact Svetlana Kisselev — enquiries about Wearable Structural Art pieces, commissions and press.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="wordmark">Svetlana&nbsp;Kisselev</a>
+
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="site-nav" id="site-nav">
+      <a href="collection.html">Collection</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <p class="eyebrow">Contact</p>
+    <h1>Enquiries and commissions.</h1>
+    <p>For acquisitions, press, gallery representation or private
+       commissions, write directly — every message is read personally.</p>
+  </section>
+
+  <section class="contact">
+
+    <!--
+      NOTE: this is a static form with no backend yet. To receive real
+      submissions, set the form's action to a service such as
+      Formspree or Getform (e.g. action="https://formspree.io/f/yourID"
+      method="POST"), then remove the preventDefault() for this form
+      inside script.js so it submits normally.
+    -->
+    <form class="contact-form">
+      <label for="contact-name">Name
+        <input type="text" id="contact-name" name="name" required>
+      </label>
+
+      <label for="contact-email">Email
+        <input type="email" id="contact-email" name="email" required>
+      </label>
+
+      <label for="contact-message">Message
+        <textarea id="contact-message" name="message" rows="5" required></textarea>
+      </label>
+
+      <button type="submit">Send message</button>
+    </form>
+    <p class="form-note" role="status"></p>
+
+    <div class="contact-details">
+      <p><strong>Studio enquiries</strong><br>hello@svetlanakisselev.com</p>
+      <p><strong>Location</strong><br>By appointment — France</p>
+    </div>
+
+  </section>
+
+  <!-- ================= WAITLIST MODULE (repeated) ================= -->
+  <section class="waitlist">
+    <h2>Be informed of upcoming unique pieces.</h2>
+    <p>No noise, no newsletter in the ordinary sense — just a note when
+       a new piece or series becomes available.</p>
+    <form>
+      <label class="sr-only" for="waitlist-email-contact">Email address</label>
+      <input type="email" id="waitlist-email-contact" placeholder="Your email" required>
+      <button type="submit">Join the list</button>
+    </form>
+    <p class="form-note" role="status"></p>
+  </section>
+
+  <footer class="site-footer">
+    &copy; 2026 Svetlana Kisselev — Wearable Structural Art
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
