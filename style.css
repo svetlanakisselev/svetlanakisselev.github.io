@@ -430,12 +430,23 @@ h1, h2, h3{
   border-top: none;
 }
 
-.collection-entry h2{ font-size: clamp(1.5rem, 3vw, 2rem); }
+.collection-entry__head{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.collection-entry__head h2{ margin: 0; font-size: clamp(1.5rem, 3vw, 2rem); }
+
+.collection-entry__head .enter-link{ flex-shrink: 0; }
 
 .collection-entry p{
   color: var(--color-text-muted);
   max-width: 42em;
-  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
 }
 
 /* Reused on every collection's own page, and on the placeholder pages */
