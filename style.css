@@ -412,7 +412,74 @@ h1, h2, h3{
 }
 
 /* ----------------------------------------------------------------
-   7. COLLECTION — series + pieces (exhibition-catalogue layout)
+   7bis. COLLECTIONS — index/list page (collection.html)
+   ---------------------------------------------------------------- */
+.collections{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem var(--gutter) 3rem;
+}
+
+.collection-entry{
+  padding: 3rem 0;
+  border-top: 1px solid var(--color-gold-soft);
+}
+
+.collection-entry:first-child{
+  padding-top: 0;
+  border-top: none;
+}
+
+.collection-entry h2{ font-size: clamp(1.5rem, 3vw, 2rem); }
+
+.collection-entry p{
+  color: var(--color-text-muted);
+  max-width: 42em;
+  margin-bottom: 1.5rem;
+}
+
+/* Reused on every collection's own page, and on the placeholder pages */
+.back-link{
+  color: var(--color-gold);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+/* "Enter" link — same quiet, tracked style as the threshold button,
+   but used inline as ordinary navigation rather than fixed to the screen */
+.enter-link{
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  opacity: 0.6;
+  position: relative;
+  padding-bottom: 0.3rem;
+  transition: opacity var(--duration-fade-slow) ease;
+}
+
+.enter-link::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-gold);
+  transition: width var(--duration-fade-slow) ease;
+}
+
+.enter-link:hover,
+.enter-link:focus-visible{ opacity: 1; outline: none; }
+
+.enter-link:hover::after,
+.enter-link:focus-visible::after{ width: 100%; }
+
+/* ----------------------------------------------------------------
+   8. COLLECTION — series + pieces (exhibition-catalogue layout)
    ---------------------------------------------------------------- */
 .series{
   max-width: var(--max-width);
