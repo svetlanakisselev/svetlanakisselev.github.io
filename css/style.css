@@ -1,0 +1,764 @@
+/* ================================================================
+   SVETLANA KISSELEV — WEARABLE STRUCTURAL ART
+   Shared stylesheet — used by every page.
+
+   HOW TO EDIT:
+   - All colors, fonts and durations are defined once, below, as
+     CSS variables. Change a value here and it updates everywhere.
+   - Component styles are grouped and commented by section.
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   0. SELF-HOSTED FONTS
+   No external dependency — the site works identically offline,
+   behind ad-blockers, and on networks that restrict Google Fonts.
+   Font files live in /fonts next to this stylesheet.
+   ---------------------------------------------------------------- */
+@font-face{
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/cormorant-garamond-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face{
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/cormorant-garamond-latin-300-italic.woff2") format("woff2");
+}
+
+@font-face{
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/inter-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face{
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/inter-latin-500-normal.woff2") format("woff2");
+}
+
+/* ----------------------------------------------------------------
+   1. DESIGN TOKENS
+   ---------------------------------------------------------------- */
+:root{
+  /* Backgrounds */
+  --color-bg-main: #1C1B19;        /* warm anthracite — every page except the threshold */
+  --color-bg-threshold: #232323;   /* placeholder — replace with the exact hex sampled from the photo's dark edge */
+
+  /* Accent */
+  --color-gold: #C9A66B;           /* titles, threshold phrase, hairlines, accents only */
+  --color-gold-soft: rgba(201, 166, 107, 0.35); /* hairline rules / dividers */
+
+  /* Text */
+  --color-text: #F2EFE9;                       /* off-white, running text */
+  --color-text-muted: rgba(242, 239, 233, 0.62); /* secondary text, captions */
+
+  /* Typography */
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif; /* titles, threshold phrase — fine serif */
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; /* running text, navigation */
+
+  /* Motion — slow fades only, nothing fast or abrupt */
+  --duration-fade-fast: 400ms;   /* threshold cinema transition */
+  --duration-fade-hold: 180ms;   /* black hold, threshold transition */
+  --duration-fade-slow: 900ms;   /* scroll reveals, hovers */
+
+  /* Layout */
+  --max-width: 1100px;
+  --gutter: clamp(1.5rem, 5vw, 4rem);
+}
+
+/* ----------------------------------------------------------------
+   2. RESET
+   ---------------------------------------------------------------- */
+*, *::before, *::after{ box-sizing: border-box; }
+
+html, body{
+  margin: 0;
+  height: 100%;
+}
+
+body{
+  background: var(--color-bg-main);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.locked{ overflow: hidden; } /* used only during the threshold transition */
+
+img{ max-width: 100%; display: block; }
+
+a{ color: inherit; text-decoration: none; }
+
+button{ font-family: inherit; }
+
+h1, h2, h3{
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin: 0 0 0.5em;
+  color: var(--color-text);
+}
+
+.eyebrow{
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.rule{
+  border: none;
+  border-top: 1px solid var(--color-gold-soft);
+  margin: 2rem 0;
+}
+
+.sr-only{
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Respect reduced motion everywhere */
+@media (prefers-reduced-motion: reduce){
+  *{ transition-duration: 1ms !important; animation-duration: 1ms !important; }
+}
+
+/* ----------------------------------------------------------------
+   3. SITE HEADER / NAVIGATION
+   (used on Collection / About / Contact, and inside the Home screen)
+   ---------------------------------------------------------------- */
+.site-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem; /* guarantees breathing room between wordmark and nav at any width */
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem var(--gutter) 1.5rem;
+}
+
+.wordmark{
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text);
+  transition: color var(--duration-fade-slow) ease;
+}
+
+.wordmark:hover,
+.wordmark:focus-visible{ color: var(--color-gold); }
+
+.site-nav{
+  display: flex;
+  gap: 2.2rem;
+}
+
+.site-nav a{
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  position: relative;
+  padding-bottom: 0.3rem;
+  transition: color var(--duration-fade-slow) ease;
+}
+
+.site-nav a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-gold);
+  transition: width var(--duration-fade-slow) ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.site-nav a.active{
+  color: var(--color-text);
+}
+
+.site-nav a:hover::after,
+.site-nav a:focus-visible::after,
+.site-nav a.active::after{
+  width: 100%;
+}
+
+.nav-toggle{
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.nav-toggle span{
+  width: 22px;
+  height: 1px;
+  background: var(--color-text);
+}
+
+@media (max-width: 720px){
+  .nav-toggle{ display: flex; }
+
+  .site-nav{
+    position: absolute;
+    top: 100%;
+    right: var(--gutter);
+    flex-direction: column;
+    gap: 1.2rem;
+    background: var(--color-bg-main);
+    border: 1px solid var(--color-gold-soft);
+    padding: 1.5rem 2rem;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity var(--duration-fade-fast) ease, transform var(--duration-fade-fast) ease;
+  }
+
+  .site-header{ position: relative; }
+
+  .site-nav.is-open{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+}
+
+/* ----------------------------------------------------------------
+   4. THRESHOLD PAGE  (index.html only)
+   ---------------------------------------------------------------- */
+.threshold{
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5vh 5vw;
+  background: var(--color-bg-threshold);
+  transition: opacity var(--duration-fade-fast) ease;
+}
+
+.threshold.fade-out{
+  opacity: 0;
+  pointer-events: none;
+}
+
+.threshold__photo{
+  max-width: 80vw;
+  max-height: 62vh;
+  object-fit: contain;
+}
+
+.threshold__tagline{
+  margin: 2.2rem 0 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.05rem, 1.8vw, 1.4rem);
+  letter-spacing: 0.05em;
+  color: var(--color-gold);
+  text-align: center;
+}
+
+.threshold__enter{
+  margin-top: 2.6rem;
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  opacity: 0.6;
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+  position: relative;
+  transition: opacity var(--duration-fade-slow) ease;
+}
+
+.threshold__enter::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-gold);
+  transform: translateX(-50%);
+  transition: width var(--duration-fade-slow) ease;
+}
+
+.threshold__enter:hover,
+.threshold__enter:focus-visible{ opacity: 1; outline: none; }
+
+.threshold__enter:hover::after,
+.threshold__enter:focus-visible::after{ width: 55%; }
+
+.black-overlay{
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-fade-fast) ease;
+}
+
+.black-overlay.visible{ opacity: 1; }
+
+/* ----------------------------------------------------------------
+   5. HOME SCREEN  (revealed inside index.html after the threshold)
+   ---------------------------------------------------------------- */
+.home{
+  position: relative;
+  z-index: 5;
+  display: none; /* switched to flex by script.js at the right moment */
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--color-bg-main);
+  opacity: 0;
+  transition: opacity var(--duration-fade-fast) ease;
+}
+
+.home.visible{ opacity: 1; }
+
+.home__hero{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem var(--gutter);
+}
+
+.home__hero h1{
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+.home__hero .home__subtitle{
+  max-width: 32em;
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: clamp(1rem, 1.9vw, 1.2rem);
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  margin: 1.4rem 0 0;
+}
+
+.home__hero .home__description{
+  max-width: 32em;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  margin-top: 1.6rem;
+}
+
+.gallery-label{
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: auto;
+  padding: 2rem var(--gutter) 0;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.32em;
+  text-transform: lowercase;
+  color: var(--color-text-muted);
+}
+
+/* ----------------------------------------------------------------
+   6. PAGE HERO  (Collection / About / Contact intro block)
+   ---------------------------------------------------------------- */
+.page-hero{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem var(--gutter) 3rem;
+}
+
+.page-hero h1{ font-size: clamp(1.8rem, 4vw, 2.6rem); }
+
+.page-hero p{
+  max-width: 42em;
+  color: var(--color-text-muted);
+}
+
+/* ----------------------------------------------------------------
+   7bis. COLLECTIONS & CHRONICLES — list/index pages
+   (collection.html and chronicles.html share the exact same layout)
+   ---------------------------------------------------------------- */
+.collections,
+.chronicles{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem var(--gutter) 3rem;
+}
+
+.collection-entry,
+.chronicle-entry{
+  padding: 3rem 0;
+  border-top: 1px solid var(--color-gold-soft);
+}
+
+.collection-entry:first-child,
+.chronicle-entry:first-child{
+  padding-top: 0;
+  border-top: none;
+}
+
+.collection-entry__head,
+.chronicle-entry__head{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.collection-entry__head h2,
+.chronicle-entry__head h2{ margin: 0; font-size: clamp(1.5rem, 3vw, 2rem); }
+
+.collection-entry__head .enter-link,
+.chronicle-entry__head .enter-link{ flex-shrink: 0; }
+
+.collection-entry p,
+.chronicle-entry p{
+  color: var(--color-text-muted);
+  max-width: 42em;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.chronicle-entry__meta{
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+/* Reused on every collection's own page, and on the placeholder pages */
+.back-link{
+  color: var(--color-gold);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+/* "Enter" link — same quiet, tracked style as the threshold button,
+   but used inline as ordinary navigation rather than fixed to the screen */
+.enter-link{
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  opacity: 0.6;
+  position: relative;
+  padding-bottom: 0.3rem;
+  transition: opacity var(--duration-fade-slow) ease;
+}
+
+.enter-link::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-gold);
+  transition: width var(--duration-fade-slow) ease;
+}
+
+.enter-link:hover,
+.enter-link:focus-visible{ opacity: 1; outline: none; }
+
+.enter-link:hover::after,
+.enter-link:focus-visible::after{ width: 100%; }
+
+.back-to-collections{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem var(--gutter) 0;
+  text-align: center;
+}
+
+/* ----------------------------------------------------------------
+   8. COLLECTION — series + pieces (exhibition-catalogue layout)
+   ---------------------------------------------------------------- */
+.series{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem var(--gutter) 4rem;
+}
+
+.series__intro{
+  max-width: 42em;
+  margin-bottom: 3rem;
+}
+
+.series__intro h2{ font-size: clamp(1.5rem, 3vw, 2rem); }
+
+.series__intro p{ color: var(--color-text-muted); }
+
+/* Each piece: large image, then a placard-style label — never a tight e-commerce grid */
+.piece{
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: center;
+  padding: 3.5rem 0;
+  border-top: 1px solid var(--color-gold-soft);
+
+  /* scroll-reveal, activated by script.js adding .is-visible */
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--duration-fade-slow) ease, transform var(--duration-fade-slow) ease;
+}
+
+.piece.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.piece:nth-child(even){ direction: rtl; } /* alternate image side for rhythm */
+.piece:nth-child(even) > *{ direction: ltr; }
+
+.piece__image{
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: #131211; /* placeholder tone while real photos are added */
+}
+
+.piece__label .eyebrow{ display: block; margin-bottom: 0.6rem; }
+
+.piece__label h3{ font-size: clamp(1.3rem, 2.4vw, 1.7rem); }
+
+.piece__label p{ color: var(--color-text-muted); font-size: 0.95rem; }
+
+.piece__label .piece__technical{
+  font-style: italic;
+  margin-top: 1.2rem;
+  line-height: 1.75;
+}
+
+/* ----------------------------------------------------------------
+   8. WAITLIST MODULE  (repeated at the foot of Collection & Contact —
+      deliberately NOT part of the main navigation)
+   ---------------------------------------------------------------- */
+.waitlist{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem var(--gutter) 5rem;
+  text-align: center;
+  border-top: 1px solid var(--color-gold-soft);
+}
+
+.waitlist h2{ font-size: 1.1rem; letter-spacing: 0.04em; }
+
+.waitlist p{
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  max-width: 30em;
+  margin: 0 auto 1.5rem;
+}
+
+.waitlist form{
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.waitlist input[type="email"]{
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-gold-soft);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  padding: 0.6rem 0.2rem;
+  width: 260px;
+  max-width: 70vw;
+  transition: border-color var(--duration-fade-slow) ease;
+}
+
+.waitlist input[type="email"]:focus{
+  outline: none;
+  border-color: var(--color-gold);
+}
+
+.waitlist button,
+.contact-form button{
+  background: none;
+  border: 1px solid var(--color-gold-soft);
+  color: var(--color-text);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.7rem 1.6rem;
+  cursor: pointer;
+  transition: border-color var(--duration-fade-slow) ease, color var(--duration-fade-slow) ease;
+}
+
+.waitlist button:hover,
+.waitlist button:focus-visible,
+.contact-form button:hover,
+.contact-form button:focus-visible{
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  outline: none;
+}
+
+.form-note{
+  margin-top: 1rem;
+  font-size: 0.82rem;
+  color: var(--color-gold);
+  opacity: 0;
+  transition: opacity var(--duration-fade-slow) ease;
+}
+
+.form-note.visible{ opacity: 1; }
+
+/* ----------------------------------------------------------------
+   9. ABOUT PAGE
+   ---------------------------------------------------------------- */
+.about{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem var(--gutter) 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.about__portrait img{
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  background: #131211;
+}
+
+.about__portrait figcaption{
+  margin-top: 0.8rem;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.about__text p{ color: var(--color-text-muted); }
+
+.about__certificate{
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-gold-soft);
+}
+
+.about__certificate h2{ font-size: 1.1rem; }
+
+@media (max-width: 820px){
+  .about, .piece{ grid-template-columns: 1fr; }
+  .piece:nth-child(even){ direction: ltr; }
+}
+
+/* ----------------------------------------------------------------
+   10. CONTACT PAGE
+   ---------------------------------------------------------------- */
+.contact{
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 1rem var(--gutter) 3rem;
+}
+
+.contact-form{
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  margin-top: 2rem;
+}
+
+.contact-form label{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.contact-form input,
+.contact-form textarea{
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-gold-soft);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.6rem 0.1rem;
+  resize: vertical;
+  transition: border-color var(--duration-fade-slow) ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+  outline: none;
+  border-color: var(--color-gold);
+}
+
+.contact-form button{ align-self: flex-start; margin-top: 0.5rem; }
+
+.contact-details{
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-gold-soft);
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  line-height: 1.9;
+}
+
+.contact-details strong{ color: var(--color-text); font-weight: 500; }
+
+/* ----------------------------------------------------------------
+   11. FOOTER
+   ---------------------------------------------------------------- */
+.site-footer{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem var(--gutter) 3rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  text-align: center;
+}

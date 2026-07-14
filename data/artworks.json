@@ -1,0 +1,63 @@
+{
+  "collections": [
+    {
+      "slug": "lacrimae-mundi",
+      "title": "Lacrimae Mundi",
+      "year": 2026,
+      "pieceCountLabel": "three",
+      "page": "lacrimae-mundi.html",
+      "pieces": []
+    },
+    {
+      "slug": "1001-nights",
+      "title": "1001 Nights",
+      "year": 2026,
+      "pieceCountLabel": "three",
+      "page": "1001-nights.html",
+      "pieces": []
+    },
+    {
+      "slug": "queen-swan",
+      "title": "Queen Swan",
+      "year": 2026,
+      "pieceCountLabel": "five",
+      "page": "queen-swan.html",
+      "intro": "It is an archetype older than language. Half woman, half bird. Suspended between two worlds — the mortal and the eternal, the visible and the sacred. She does not ask permission to be extraordinary. She simply is. She has always been. To wear a piece from this collection is not an act of adornment. It is an act of recognition.",
+      "pieces": [
+        {
+          "id": "queen-swan-01",
+          "label": "Queen Swan — I",
+          "title": "Byzantium Influenced Transformer Crown \u201cProcession of One\u201d",
+          "image": "images/queen-swan-01.jpg",
+          "narrative": "Every queen must be crowned — but this is not about power. It is about remembering. This Crown was not designed. It was summoned — from Orthodox icons, from centuries of sacred gold that never stopped glittering in my mind. To wear this crown is not to pretend to royalty. It is to remember that beauty itself is sovereign.",
+          "technical": {
+            "type": "Stylised Ceremonial Headpiece · One of a Kind · Paris 2026",
+            "description": "Transformer parure comprising the crown and its detachable pendilia, convertible into extra-long earrings. Two ways to wear the same parure — crown with pendilia, or crown paired with extra-long earrings.",
+            "measurements": {
+              "crown": "H=14 cm, D=13 cm (circumference 44.5 cm)",
+              "pendilia": "H=23 cm, L=5 cm"
+            },
+            "techniques": "Mixed media",
+            "materials": "A mix of genuinely vintage and contemporary findings — brass and gold-tone filigree, glass and epoxy cabochons, rhinestones, an assortment of pearls (metallic, plastic, and freshwater), mother-of-pearl. The paper imagery is hand-treated to replicate the surface of aged paintings, with a crackled, time-worn patina."
+          }
+        },
+        {
+          "id": "queen-swan-02",
+          "label": "Queen Swan — II",
+          "title": "Crown Undone",
+          "image": "images/queen-swan-02.jpg",
+          "narrative": "Authority, worn loosely enough to be questioned. A piece that completes itself only on the body.",
+          "technical": null
+        },
+        {
+          "id": "queen-swan-03",
+          "label": "Queen Swan — III",
+          "title": "Still Water",
+          "image": "images/queen-swan-03.jpg",
+          "narrative": "Silence, given a structure you can wear. The last piece of the series, and the quietest.",
+          "technical": null
+        }
+      ]
+    }
+  ]
+}
