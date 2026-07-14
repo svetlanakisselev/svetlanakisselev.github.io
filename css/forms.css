@@ -1,0 +1,11 @@
+/* forms.css - Release 2 */
+:root{
+ --form-border:rgba(183,148,86,.35);
+ --form-border-focus:var(--color-gold);
+}
+.form-group{display:flex;flex-direction:column;gap:.55rem;margin-bottom:1.4rem}
+.form-group input,.form-group textarea{
+width:100%;background:transparent;border:none;border-bottom:1px solid var(--form-border);
+padding:1rem 0;color:var(--color-text);font:inherit}
+.form-group input:focus,.form-group textarea:focus{
+outline:none;border-bottom-color:var(--form-border-focus)}
