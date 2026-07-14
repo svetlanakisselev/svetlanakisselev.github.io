@@ -6,24 +6,11 @@
 <title>About — Svetlana Kisselev</title>
 <meta name="description" content="About Svetlana Kisselev — artist statement, the practice of Wearable Structural Art, and the certificate of authenticity accompanying each piece.">
 
-
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <header class="site-header">
-    <a href="index.html" class="wordmark">Svetlana&nbsp;Kisselev</a>
-
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav class="site-nav" id="site-nav">
-      <a href="collection.html">Collections</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <div data-include="components/header.html"></div>
 
   <section class="page-hero">
     <p class="eyebrow">About</p>
@@ -89,10 +76,9 @@
 
   </section>
 
-  <footer class="site-footer">
-    &copy; 2026 Svetlana Kisselev
-  </footer>
+  <div data-include="components/footer.html"></div>
 
-<script src="script.js"></script>
+<script src="js/include.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

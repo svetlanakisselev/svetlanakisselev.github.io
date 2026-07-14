@@ -6,8 +6,7 @@
 <title>Svetlana Kisselev — Wearable Structural Art</title>
 <meta name="description" content="Wearable Structural Art by Svetlana Kisselev — one-of-a-kind sculptural pieces for collectors, curators and design-conscious audiences.">
 
-
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body class="locked">
 
@@ -31,19 +30,7 @@
   <!-- ================= HOME ================= -->
   <div id="home" class="home">
 
-    <header class="site-header">
-      <a href="index.html" class="wordmark">Svetlana&nbsp;Kisselev</a>
-
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav class="site-nav" id="site-nav">
-        <a href="collection.html">Collections</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </header>
+    <div data-include="components/header.html"></div>
 
     <div class="home__hero">
       <h1>Guarding a kingdom of wonders...</h1>
@@ -53,12 +40,11 @@
 
     <p class="gallery-label">wearable art — paris</p>
 
-    <footer class="site-footer">
-      &copy; 2026 Svetlana Kisselev
-    </footer>
+    <div data-include="components/footer.html"></div>
 
   </div>
 
-<script src="script.js"></script>
+<script src="js/include.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

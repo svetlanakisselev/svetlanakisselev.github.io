@@ -6,24 +6,11 @@
 <title>Contact — Svetlana Kisselev</title>
 <meta name="description" content="Contact Svetlana Kisselev — enquiries about Wearable Structural Art pieces, commissions and press.">
 
-
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <header class="site-header">
-    <a href="index.html" class="wordmark">Svetlana&nbsp;Kisselev</a>
-
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav class="site-nav" id="site-nav">
-      <a href="collection.html">Collections</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <div data-include="components/header.html"></div>
 
   <section class="page-hero">
     <p class="eyebrow">Contact</p>
@@ -39,7 +26,7 @@
       submissions, set the form's action to a service such as
       Formspree or Getform (e.g. action="https://formspree.io/f/yourID"
       method="POST"), then remove the preventDefault() for this form
-      inside script.js so it submits normally.
+      inside js/script.js so it submits normally.
     -->
     <form class="contact-form">
       <label for="contact-name">Name
@@ -66,22 +53,11 @@
   </section>
 
   <!-- ================= WAITLIST MODULE (repeated) ================= -->
-  <section class="waitlist">
-    <h2>Be informed of upcoming unique pieces.</h2>
-    <p>No noise, no newsletter in the ordinary sense — just a note when
-       a new piece or series becomes available.</p>
-    <form>
-      <label class="sr-only" for="waitlist-email-contact">Email address</label>
-      <input type="email" id="waitlist-email-contact" placeholder="Your email" required>
-      <button type="submit">Join the list</button>
-    </form>
-    <p class="form-note" role="status"></p>
-  </section>
+  <div data-include="components/newsletter.html"></div>
 
-  <footer class="site-footer">
-    &copy; 2026 Svetlana Kisselev
-  </footer>
+  <div data-include="components/footer.html"></div>
 
-<script src="script.js"></script>
+<script src="js/include.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
