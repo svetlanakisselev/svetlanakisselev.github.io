@@ -1,13 +1,20 @@
 document.addEventListener('DOMContentLoaded',()=>{
-console.log("newsletter.js loaded");
+
+console.log("newsletter.js loaded");  /* tracking */
+
 const form=document.querySelector('.waitlist form');
 if(!form)return;
+
+console.log("Form found:", form); /* tracking */
+
 const email=form.querySelector('input[type=email]');
 const status=document.querySelector('.form-note');
 const btn=form.querySelector('button');
 const WORKER_URL='https://morning-bread-4717.s-uniculus.workers.dev/';
 form.addEventListener('submit',async e=>{
-console.log("submit intercepted");
+
+console.log("submit intercepted"); /* tracking */
+
 e.preventDefault();
 btn.disabled=true;
 status.textContent='';
