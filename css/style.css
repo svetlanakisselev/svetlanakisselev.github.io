@@ -619,7 +619,8 @@ h1, h2, h3{
 }
 
 .waitlist button,
-.contact-form button{
+.contact-form button,
+.btn{
   background: none;
   border: 1px solid var(--color-gold-soft);
   color: var(--color-text);
@@ -628,13 +629,16 @@ h1, h2, h3{
   text-transform: uppercase;
   padding: 0.7rem 1.6rem;
   cursor: pointer;
+  display: inline-block;
   transition: border-color var(--duration-fade-slow) ease, color var(--duration-fade-slow) ease;
 }
 
 .waitlist button:hover,
 .waitlist button:focus-visible,
 .contact-form button:hover,
-.contact-form button:focus-visible{
+.contact-form button:focus-visible,
+.btn:hover,
+.btn:focus-visible{
   border-color: var(--color-gold);
   color: var(--color-gold);
   outline: none;
@@ -749,6 +753,38 @@ h1, h2, h3{
 }
 
 .contact-details strong{ color: var(--color-text); font-weight: 500; }
+
+/* ----------------------------------------------------------------
+   12bis. SUBSCRIPTION CONFIRMED
+   ---------------------------------------------------------------- */
+.confirmation{
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem var(--gutter);
+}
+
+.confirmation h1{
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-bottom: 1rem;
+}
+
+.confirmation p{
+  color: var(--color-text-muted);
+  max-width: 32em;
+  margin-bottom: 2rem;
+}
+
+.confirmation-actions{
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 
 /* ----------------------------------------------------------------
    11. FOOTER
