@@ -149,6 +149,11 @@ function initScrollReveal() {
    -------------------------------------------------------------- */
 function initWaitlistForms() {
   document.querySelectorAll(".waitlist form").forEach(function (form) {
+
+    // Skip forms already handled by another script (e.g. js/newsletter.js),
+    // explicitly marked with data-managed-by="newsletter" in the HTML.
+    if (form.hasAttribute("data-managed-by")) return;
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var note = form.parentElement.querySelector(".form-note");
