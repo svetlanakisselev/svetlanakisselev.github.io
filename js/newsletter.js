@@ -1,30 +1,50 @@
-document.addEventListener('DOMContentLoaded',()=>{
+function initNewsletter() {
+    const form = document.querySelector('.waitlist form[data-managed-by="newsletter"]');
+    if (!form) {
+        console.warn("Newsletter form not found.");
+        return;
+    }
 
-console.log("newsletter.js loaded");  /* tracking */
+    const email = form.querySelector('input[type="email"]');
+    const status = form.parentElement.querySelector('.form-note');
+    const button = form.querySelector('button[type="submit"]');
 
-const form=document.querySelector('.waitlist form');
-if(!form)return;
+    const WORKER_URL = "https://morning-bread-4717.s-uniculus.workers.dev/";
 
-console.log("Form found:", form); /* tracking */
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
 
-const email=form.querySelector('input[type=email]');
-const status=document.querySelector('.form-note');
-const btn=form.querySelector('button');
-const WORKER_URL='https://morning-bread-4717.s-uniculus.workers.dev/';
-form.addEventListener('submit',async e=>{
+        button.disabled = true;
+        status.textContent = "";
 
-console.log("submit intercepted"); /* tracking */
+        try {
+            const response = await fetch(WORKER_URL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email: email.value.trim()
+                })
+            });
 
-e.preventDefault();
-btn.disabled=true;
-status.textContent='';
-try{
-const r=await fetch(WORKER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email.value.trim()})});
-const d=await r.json();
-status.textContent=d.message;
-}catch(err){
-status.textContent='Connection error.';
+            const data = await response.json();
+
+            status.textContent =
+                data.message || "Please check your inbox.";
+
+            if (response.ok) {
+                form.reset();
+            }
+
+        } catch (error) {
+            console.error(error);
+            status.textContent =
+                "Connection error. Please try again.";
+        } finally {
+            button.disabled = false;
+        }
+    });
 }
-btn.disabled=false;
-});
-});
+
+document.addEventListener("includes:loaded", initNewsletter);
