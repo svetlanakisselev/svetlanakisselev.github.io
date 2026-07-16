@@ -20,18 +20,27 @@
       "slug": "queen-swan",
       "title": "Queen Swan",
       "year": 2026,
-      "pieceCountLabel": "five",
+      "pieceCountLabel": "four",
       "page": "queen-swan.html",
       "intro": "It is an archetype older than language. Half woman, half bird. Suspended between two worlds — the mortal and the eternal, the visible and the sacred. She does not ask permission to be extraordinary. She simply is. She has always been. To wear a piece from this collection is not an act of adornment. It is an act of recognition.",
       "pieces": [
         {
           "id": "queen-swan-01",
           "label": "Queen Swan — I",
-          "title": "Byzantium Influenced Transformer Crown \u201cProcession of One\u201d",
-          "image": "images/queen-swan-01.jpg",
+          "title": "Byzantine-Influenced Transformer Crown \u201cProcession of One\u201d",
+          "images": [
+            {
+              "src": "images/queen-swan/baroque-relic-crown-parure-triptych.jpg",
+              "alt": "Byzantine-influenced gold transformer crown with detachable pendilia, one-of-a-kind ceremonial headpiece by Svetlana Kisselev"
+            },
+            {
+              "src": "images/queen-swan/baroque-relic-crown-triptych.jpg",
+              "alt": "Close-up of Byzantine-inspired gold filigree crown with vintage cabochons and pearls, wearable structural art"
+            }
+          ],
           "narrative": "Every queen must be crowned — but this is not about power. It is about remembering. This Crown was not designed. It was summoned — from Orthodox icons, from centuries of sacred gold that never stopped glittering in my mind. To wear this crown is not to pretend to royalty. It is to remember that beauty itself is sovereign.",
           "technical": {
-            "type": "Stylised Ceremonial Headpiece · One of a Kind · Paris 2026",
+            "type": "Stylized Ceremonial Headpiece · One of a Kind · Paris 2026",
             "description": "Transformer parure comprising the crown and its detachable pendilia, convertible into extra-long earrings. Two ways to wear the same parure — crown with pendilia, or crown paired with extra-long earrings.",
             "measurements": {
               "crown": "H=14 cm, D=13 cm (circumference 44.5 cm)",
@@ -44,18 +53,54 @@
         {
           "id": "queen-swan-02",
           "label": "Queen Swan — II",
-          "title": "Crown Undone",
-          "image": "images/queen-swan-02.jpg",
-          "narrative": "Authority, worn loosely enough to be questioned. A piece that completes itself only on the body.",
-          "technical": null
+          "title": "Byzantine-Influenced Reliquary Cuff \u201cSacred Heart\u2019s Armor\u201d",
+          "images": [
+            {
+              "src": "images/queen-swan/baroque-relic-cuff-bracelet-queen-swan.jpg",
+              "alt": "Byzantine-influenced reliquary cuff bracelet shaped as a wearable sacred heart altar, one-of-a-kind jewelry piece"
+            },
+            {
+              "src": "images/queen-swan/baroque-relic-cuff-bracelet-queen-swan-side.jpg",
+              "alt": "Side view of gold filigree reliquary cuff bracelet with vintage cabochons, Queen Swan collection by Svetlana Kisselev"
+            }
+          ],
+          "narrative": "An open heart needs armor. An armored heart cannot fly. Only through the pain does it learn to believe.",
+          "technical": {
+            "type": "Stylized Ceremonial Wristpiece · One of a Kind · Paris 2026",
+            "description": "Adjustable Cuff as a Wearable Altar.",
+            "measurements": {
+              "altar": "H=12 cm, L=9 cm",
+              "bracelet": "H=5 cm"
+            },
+            "techniques": "Mixed media",
+            "materials": "A mix of genuinely vintage and contemporary findings — brass and gold-tone filigree, glass and epoxy cabochons, rhinestones, an assortment of pearls (metallic, plastic, and freshwater), mother-of-pearl. The paper imagery is hand-treated to replicate the surface of aged paintings, with a crackled, time-worn patina."
+          }
         },
         {
           "id": "queen-swan-03",
           "label": "Queen Swan — III",
-          "title": "Still Water",
-          "image": "images/queen-swan-03.jpg",
-          "narrative": "Silence, given a structure you can wear. The last piece of the series, and the quietest.",
-          "technical": null
+          "title": "Byzantine-Influenced Reliquary Devotional Pendant \u201cBetween Two Worlds\u201d",
+          "images": [
+            {
+              "src": "images/queen-swan/baroque-relic-necklace-pendant-queen-swan.jpg",
+              "alt": "Byzantine-influenced two-tiered reliquary pendant necklace on silk ribbon, devotional wearable art"
+            },
+            {
+              "src": "images/queen-swan/baroque-relic-necklace-pendant-queen-swan-detail.jpg",
+              "alt": "Detail of gold filigree reliquary pendant with faceted crystal and freshwater pearls, Queen Swan collection"
+            }
+          ],
+          "narrative": "Queen and Swan — between two worlds: visible and invisible, real and imaginary, duty and freedom. Two symbols, one devotion.",
+          "technical": {
+            "type": "Stylized Ceremonial Pendant Necklace · One of a Kind · Paris 2026",
+            "description": "Two-Tiered Reliquary on Silk Ribbon.",
+            "measurements": {
+              "pendant": "H=26 cm, L=6 cm",
+              "ribbon": "W=5 cm, L=108 cm"
+            },
+            "techniques": "Mixed media",
+            "materials": "A blend of genuinely vintage and contemporary findings: brass and gold-tone filigree, faceted crystal, freshwater pearl, glass drop, silk ribbon. The paper imagery is hand-treated to replicate the surface of aged paintings, with a crackled, time-worn patina."
+          }
         }
       ]
     }
