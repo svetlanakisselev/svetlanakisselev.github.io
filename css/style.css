@@ -560,6 +560,18 @@ h1, h2, h3{
   background: #131211; /* placeholder tone while real photos are added */
 }
 
+/* Used when a piece shows two images stacked in the image column
+   instead of a single photo (e.g. full parure + detail view) */
+.piece__images{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.piece__images .piece__image{
+  aspect-ratio: 4 / 5;
+}
+
 .piece__label .eyebrow{ display: block; margin-bottom: 0.6rem; }
 
 .piece__label h3{ font-size: clamp(1.3rem, 2.4vw, 1.7rem); }
