@@ -30,12 +30,15 @@ function initNewsletter() {
 
             const data = await response.json();
 
-            status.textContent =
-                data.message || "Please check your inbox.";
-
             if (response.ok) {
-                form.reset();
+                // Success confirmed by the Worker — send the visitor to
+                // a dedicated page rather than just showing an inline note.
+                window.location.href = "subscription-pending.html";
+                return;
             }
+
+            status.textContent =
+                data.message || "Something went wrong. Please try again.";
 
         } catch (error) {
             console.error(error);
