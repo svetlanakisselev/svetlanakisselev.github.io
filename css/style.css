@@ -382,6 +382,10 @@ h1, h2, h3{
   margin-top: 1.6rem;
 }
 
+.home__hero .home__cta{
+  margin-top: 2rem;
+}
+
 .gallery-label{
   width: 100%;
   box-sizing: border-box;
