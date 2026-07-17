@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initScrollReveal();
   initContactForm();
   initImageZoom();
+  initImageGallery();
 });
 
 document.addEventListener("includes:loaded", function () {
@@ -187,7 +188,41 @@ function initContactForm() {
 }
 
 /* --------------------------------------------------------------
-   6. IMAGE ZOOM (LIGHTBOX)
+   6. IMAGE GALLERY  (show first 3 images, reveal the rest on demand)
+   Only adds a toggle button when a piece has more than 3 images —
+   pieces with 3 or fewer are unaffected.
+   -------------------------------------------------------------- */
+function initImageGallery() {
+  document.querySelectorAll(".piece__images").forEach(function (container) {
+    var images = Array.prototype.slice.call(
+      container.querySelectorAll(".piece__image")
+    );
+
+    if (images.length <= 3) return;
+
+    var extraImages = images.slice(3);
+    extraImages.forEach(function (img) { img.classList.add("is-hidden"); });
+
+    var toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "enter-link piece__images-toggle";
+    toggle.textContent = "See more pictures";
+    container.appendChild(toggle);
+
+    var expanded = false;
+
+    toggle.addEventListener("click", function () {
+      expanded = !expanded;
+      extraImages.forEach(function (img) {
+        img.classList.toggle("is-hidden", !expanded);
+      });
+      toggle.textContent = expanded ? "See less pictures" : "See more pictures";
+    });
+  });
+}
+
+/* --------------------------------------------------------------
+   7. IMAGE ZOOM (LIGHTBOX)
    For every .piece__image, checks whether a matching high-resolution
    file exists in a sibling /full/ folder — e.g.
      images/queen-swan/photo.jpg
