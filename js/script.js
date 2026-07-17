@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initThreshold();
   initScrollReveal();
   initContactForm();
+  initImageZoom();
 });
 
 document.addEventListener("includes:loaded", function () {
@@ -182,5 +183,83 @@ function initContactForm() {
       note.classList.add("visible");
     }
     contactForm.reset();
+  });
+}
+
+/* --------------------------------------------------------------
+   6. IMAGE ZOOM (LIGHTBOX)
+   For every .piece__image, checks whether a matching high-resolution
+   file exists in a sibling /full/ folder — e.g.
+     images/queen-swan/photo.jpg
+   looks for
+     images/queen-swan/full/photo-full.jpg
+   The check is just an attempted image load: if it 404s, that image
+   silently stays as a normal, non-zoomable image. Nothing needs to
+   be configured per-image — dropping the right file in /full/ is
+   enough to turn the zoom on for that photo.
+   -------------------------------------------------------------- */
+function initImageZoom() {
+  var images = document.querySelectorAll(".piece__image");
+  if (!images.length) return;
+
+  var lightbox = document.createElement("div");
+  lightbox.className = "lightbox";
+  lightbox.setAttribute("aria-hidden", "true");
+
+  var lightboxImg = document.createElement("img");
+  lightbox.appendChild(lightboxImg);
+  document.body.appendChild(lightbox);
+
+  function onKeydown(e) {
+    if (e.key === "Escape") closeLightbox();
+  }
+
+  function openLightbox(src, alt) {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || "";
+    lightbox.classList.add("visible");
+    document.addEventListener("keydown", onKeydown);
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("visible");
+    document.removeEventListener("keydown", onKeydown);
+  }
+
+  lightbox.addEventListener("click", closeLightbox);
+
+  function toFullPath(src) {
+    var parts = src.split("/");
+    var filename = parts.pop();
+    var dotIndex = filename.lastIndexOf(".");
+    if (dotIndex === -1) return null;
+
+    var name = filename.substring(0, dotIndex);
+    var ext = filename.substring(dotIndex);
+
+    parts.push("full");
+    parts.push(name + "-full" + ext);
+    return parts.join("/");
+  }
+
+  images.forEach(function (img) {
+    var fullSrc = toFullPath(img.getAttribute("src"));
+    if (!fullSrc) return;
+
+    var probe = new Image();
+
+    probe.onload = function () {
+      img.classList.add("piece__image--zoomable");
+      img.addEventListener("click", function () {
+        openLightbox(fullSrc, img.alt);
+      });
+    };
+
+    probe.onerror = function () {
+      // No matching high-resolution file — this image simply
+      // isn't zoomable, nothing else happens.
+    };
+
+    probe.src = fullSrc;
   });
 }
