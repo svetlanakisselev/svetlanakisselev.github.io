@@ -513,6 +513,41 @@ h1, h2, h3{
   text-align: center;
 }
 
+.piece__image--zoomable{
+  cursor: zoom-in;
+}
+
+/* ----------------------------------------------------------------
+   7ter. IMAGE ZOOM (LIGHTBOX)
+   Only activated on images that have a matching high-resolution
+   file in a sibling /full/ folder (see js/script.js).
+   ---------------------------------------------------------------- */
+.lightbox{
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.92);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-fade-fast) ease;
+}
+
+.lightbox.visible{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox img{
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  cursor: zoom-out;
+}
+
 /* ----------------------------------------------------------------
    8. COLLECTION — series + pieces (exhibition-catalogue layout)
    ---------------------------------------------------------------- */
