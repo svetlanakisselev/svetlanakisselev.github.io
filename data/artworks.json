@@ -6,7 +6,35 @@
       "year": 2026,
       "pieceCountLabel": "three",
       "page": "lacrimae-mundi.html",
-      "pieces": []
+      "intro": "Exploring humanity's spiritual paths — the soul caught between altar and totem, suffering and rage, surrender and resistance.",
+      "pieces": [
+        {
+          "id": "lacrimae-mundi-01",
+          "label": "Lacrimae Mundi — I",
+          "title": "Influenced by Orthodox Baroque and African Sacred Art Reliquary Plastron Necklace \u201cLacrimae Mundi \u2014 The Tears of the World\u201d",
+          "images": [
+            {
+              "src": "images/lacrimae-mundi/baroque-relic-plastron-necklace-lacrimae-mundi.jpg",
+              "alt": "Sculptural reliquary plastron necklace with African wooden mask and Byzantine-inspired gold filigree, one-of-a-kind wearable art by Svetlana Kisselev"
+            },
+            {
+              "src": "images/lacrimae-mundi/baroque-relic-plastron-necklace-lacrimae-mundi-detail.jpg",
+              "alt": "Detail of hand-carved African wooden mask pendant with brass filigree, cowrie shells and freshwater pearls, Lacrimae Mundi collection"
+            }
+          ],
+          "narrative": "Faith wears many faces. Suffering speaks a single language.",
+          "technical": {
+            "type": "Stylized sculptural necklace · One of a Kind · Paris 2026",
+            "description": "The artwork consists of two interconnected elements: a dramatic choker-corset embracing the throat, inspired by the iconic neck adornments of the Kayan women, transforming the neck into a sacred architectural space where the body itself becomes a reliquary; and an oversized pectoral plastron pendant, drawing inspiration from Byzantine and Orthodox reliquaries and devotional icons, fused with the visual language of African ceremonial masks and ritual objects. Together, these elements create a sculptural composition where sacred traditions converge into a single contemporary form.",
+            "measurements": {
+              "plastronPendant": "W=20 cm, H=35 cm",
+              "chokerCorset": "Adjustable L 35-37 cm, H=6 cm"
+            },
+            "techniques": "Mixed media",
+            "materials": "Hand-carved African wooden mask, brass stampings, gold-tone filigree components, freshwater pearls, genuine horn elements, cowrie shell, various seed, wooden and glass beads. 24k matt gold plated findings: beads, spacer beads. Other mixed metal findings."
+          }
+        }
+      ]
     },
     {
       "slug": "1001-nights",
@@ -14,7 +42,36 @@
       "year": 2026,
       "pieceCountLabel": "three",
       "page": "1001-nights.html",
-      "pieces": []
+      "intro": "An invitation into the scented opulence of the Orient, rendered in gold and gemstone. Excess as refinement. Myth as adornment. An irresistible world, saturated with beauty.",
+      "pieces": [
+        {
+          "id": "1001-nights-01",
+          "label": "1001 Nights — I",
+          "title": "Inspired by Orientalist Dreams, Asymmetrical Statement Earrings \u201c1001 Nights \u2014 An Irresistible World of Excess\u201d",
+          "images": [
+            {
+              "src": "images/1001-nights/baroque-relic-earrings-1001-nights.jpg",
+              "alt": "Orientalist-inspired asymmetrical statement earrings with gold filigree and faceted turquoise glass stones, one-of-a-kind wearable art by Svetlana Kisselev"
+            },
+            {
+              "src": "images/1001-nights/baroque-relic-earrings-1001-nights-detail.jpg",
+              "alt": "Detail of gold-tone filigree earring with dangling gold stars and pearl accents, 1001 Nights collection"
+            }
+          ],
+          "narrative": "An endless journey between beauty and excess — the myth that refinement is never enough, that finery must be saturated to be irresistible.",
+          "technical": {
+            "type": "Stylized Ceremonial Asymmetrical Earrings · One of a Kind · Paris 2026",
+            "description": "The artwork consists of two interconnected elements — a single narrative unfolding across two supports, each completing the other. Together, these elements create a narrative composition where craft traditions converge into a single reawakened form.",
+            "measurements": {
+              "pendant": "W=6 cm, H=23 cm (excluding clasp)",
+              "clasp": "Clip clasp with stud",
+              "claspEmbellishment": "Oval rhinestone, 18 x 25 mm"
+            },
+            "techniques": "Mixed media",
+            "materials": "Brass stampings, gold-tone filigree components, faceted glass stones in turquoise, purple, and teal, pearl accents, dangling gold stars. The paper imagery is hand-treated to replicate the look of aged, crackled oil paintings."
+          }
+        }
+      ]
     },
     {
       "slug": "queen-swan",
