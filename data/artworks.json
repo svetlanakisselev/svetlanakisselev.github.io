@@ -70,6 +70,51 @@
             "techniques": "Mixed media",
             "materials": "Brass stampings, gold-tone filigree components, faceted glass stones in turquoise, purple, and teal, pearl accents, dangling gold stars. The paper imagery is hand-treated to replicate the look of aged, crackled oil paintings."
           }
+        },
+        {
+          "id": "1001-nights-02",
+          "label": "1001 Nights — II",
+          "title": "Inspired by Orientalist Dreams, Statement Mono Earring \u201c1001 Nights \u2014 An Irresistible World of Excess\u201d",
+          "images": [
+            {
+              "src": "images/1001-nights/baroque-relic-mono-earring-1001-nights.jpg",
+              "alt": "Orientalist-inspired gold statement mono earring with faceted turquoise glass stones and dangling gold stars, one-of-a-kind wearable art by Svetlana Kisselev"
+            }
+          ],
+          "narrative": "Legendary Oriental opulence — even alone, it is more than enough.",
+          "technical": {
+            "type": "Stylized Ceremonial Mono Earring · One of a Kind · Paris 2026",
+            "description": "A single narrative piece that delivers the whole story.",
+            "measurements": {
+              "pendant": "W=6 cm, H=23 cm (excluding clasp)",
+              "clasp": "Clip clasp with stud",
+              "claspEmbellishment": "Oval rhinestone, 18 x 25 mm"
+            },
+            "techniques": "Mixed media",
+            "materials": "Brass stampings, gold-tone filigree components, 24k matt gold plated findings (beads, spacer beads, chain). Other mixed metal findings. Faceted glass stones and cabochons in turquoise, purple, and teal, pearl accents, dangling gold stars. The paper imagery is hand-treated to replicate the look of aged, crackled oil paintings."
+          }
+        },
+        {
+          "id": "1001-nights-03",
+          "label": "1001 Nights — III",
+          "title": "Inspired by Orientalist Dreams, Statement Necklace \u201c1001 Nights \u2014 Gilded Captivity\u201d",
+          "images": [
+            {
+              "src": "images/1001-nights/baroque-relic-pendant-1001-nights.jpg",
+              "alt": "Orientalist-inspired gold statement necklace with faceted glass cabochons and dangling gold stars, 1001 Nights collection by Svetlana Kisselev"
+            }
+          ],
+          "narrative": "Legendary Oriental opulence that binds as much as it adorns.",
+          "technical": {
+            "type": "Stylized Ceremonial Necklace · One of a Kind · Paris 2026",
+            "description": "A narrative piece that explores splendor as bondage, and freedom as a choice.",
+            "measurements": {
+              "pendant": "W=6 cm, H=28 cm (excluding clasp)",
+              "chain": "L=41 cm"
+            },
+            "techniques": "Mixed media",
+            "materials": "Brass stampings, gold-tone filigree components, 24k matt gold plated findings (beads, spacer beads, chain). Other mixed metal findings. Faceted glass stones and cabochons in turquoise, purple, and teal, pearl accents, dangling gold stars. The paper imagery is hand-treated to replicate the look of aged, crackled oil paintings."
+          }
         }
       ]
     },
