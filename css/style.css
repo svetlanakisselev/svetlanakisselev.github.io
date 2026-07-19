@@ -754,6 +754,12 @@ h1, h2, h3{
 
 .about__certificate h2{ font-size: 1.1rem; }
 
+.about__certificate-image{
+  margin-top: 1.5rem;
+  max-width: 100%;
+  width: 320px;
+}
+
 @media (max-width: 820px){
   .about, .piece{ grid-template-columns: 1fr; }
   .piece:nth-child(even){ direction: ltr; }
