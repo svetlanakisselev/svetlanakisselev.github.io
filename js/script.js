@@ -176,6 +176,10 @@ function initContactForm() {
   var contactForm = document.querySelector(".contact-form");
   if (!contactForm) return;
 
+  // Skip if this form is handled by a dedicated script
+  // (e.g. js/contact-form.js), marked with data-managed-by in the HTML.
+  if (contactForm.hasAttribute("data-managed-by")) return;
+
   contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
     var note = contactForm.parentElement.querySelector(".form-note");
