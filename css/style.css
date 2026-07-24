@@ -867,3 +867,21 @@ h1, h2, h3{
   color: var(--color-text-muted);
   text-align: center;
 }
+
+.site-footer__social{
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.site-footer__social a{
+  display: inline-flex;
+  opacity: 0.65;
+  transition: opacity var(--duration-fade-slow) ease;
+}
+
+.site-footer__social a:hover,
+.site-footer__social a:focus-visible{
+  opacity: 1;
+}
