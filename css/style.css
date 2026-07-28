@@ -885,3 +885,83 @@ h1, h2, h3{
 .site-footer__social a:focus-visible{
   opacity: 1;
 }
+
+/* ----------------------------------------------------------------
+   13. BREADCRUMB
+   (Lacrimae Mundi, Queen Swan, 1001 Nights — piece pages only)
+   ---------------------------------------------------------------- */
+.breadcrumb{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem var(--gutter) 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.breadcrumb a{
+  color: var(--color-gold);
+  transition: opacity var(--duration-fade-slow) ease;
+}
+
+.breadcrumb a:hover,
+.breadcrumb a:focus-visible{ opacity: 0.7; outline: none; }
+
+.breadcrumb span{ color: var(--color-text-muted); }
+
+/* ----------------------------------------------------------------
+   14. EXPLORE ALSO
+   (cross-links to the other collections, foot of each piece page,
+   above .back-to-collections)
+   ---------------------------------------------------------------- */
+.explore-also{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem var(--gutter) 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.8rem 1.6rem;
+  text-align: center;
+}
+
+.explore-also__label{
+  width: 100%;
+  margin: 0 0 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+@media (min-width: 560px){
+  .explore-also__label{ width: auto; margin: 0; }
+}
+
+/* ----------------------------------------------------------------
+   15. CROSS-PAGE CTAs
+   (About <-> Collections mutual links)
+   ---------------------------------------------------------------- */
+.about__cta{
+  margin-top: 2rem;
+}
+
+.collections__cta{
+  margin-top: 1.5rem;
+}
+
+/* ----------------------------------------------------------------
+   16. HOME — SEO INTRO PARAGRAPH
+   (sits between the poetic subtitle and the short description)
+   ---------------------------------------------------------------- */
+.home__hero .home__intro{
+  max-width: 32em;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  line-height: 1.7;
+  margin: 1.2rem 0 0;
+}
