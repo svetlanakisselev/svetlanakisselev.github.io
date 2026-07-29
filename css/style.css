@@ -965,3 +965,50 @@ h1, h2, h3{
   line-height: 1.7;
   margin: 1.2rem 0 0;
 }
+
+/* ----------------------------------------------------------------
+   17. CHRONICLE ARTICLE PAGE
+   (single long-form essay page, e.g. chronicle-what-i-never-resolved.html)
+   ---------------------------------------------------------------- */
+.chronicle-article{
+  max-width: 38em;
+  margin: 0 auto;
+  padding: 1rem var(--gutter) 4rem;
+}
+
+.chronicle-article__meta{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  align-items: baseline;
+  margin-bottom: 2.5rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+.chronicle-article__meta .color-gold,
+.chronicle-article__meta strong{
+  color: var(--color-gold);
+  font-weight: 500;
+}
+
+.chronicle-article__body p{
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin-bottom: 1.4rem;
+}
+
+.chronicle-article__body em{
+  font-style: italic;
+  color: var(--color-text);
+}
+
+.chronicle-article__links{
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-gold-soft);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem 2rem;
+}
