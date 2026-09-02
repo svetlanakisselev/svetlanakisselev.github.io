@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initContactForm();
   initImageZoom();
   initImageGallery();
+  initShareButtons();
 });
 
 document.addEventListener("includes:loaded", function () {
@@ -301,4 +302,70 @@ function initImageZoom() {
 
     probe.src = fullSrc;
   });
+}
+
+/* --------------------------------------------------------------
+   8. SHARE BUTTON  (per piece, on collection pages)
+   Shares the page URL with a #anchor pointing at that specific
+   piece (its <article class="piece"> needs a matching id — see
+   HTML). Uses the native Web Share API where available (opens the
+   device's own share sheet: Messages, WhatsApp, Mail, etc.).
+   Falls back to copying the link to the clipboard, with a brief
+   "Link copied" confirmation next to the button.
+   -------------------------------------------------------------- */
+function initShareButtons() {
+  var buttons = document.querySelectorAll(".share-btn");
+  if (!buttons.length) return;
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var piece = btn.closest(".piece");
+
+      // Title: explicit data-share-title wins; otherwise fall back to
+      // the piece's own h3, otherwise the page's <title>.
+      var title = btn.dataset.shareTitle ||
+                  (piece && piece.querySelector("h3") ? piece.querySelector("h3").textContent.trim() : "") ||
+                  document.title;
+
+      // Anchor: explicit data-share-anchor wins; otherwise fall back to
+      // the piece's own id; otherwise no fragment (share the page itself).
+      var anchor = btn.dataset.shareAnchor ||
+                   (piece ? piece.id : "");
+
+      var url = window.location.origin + window.location.pathname +
+                (anchor ? "#" + anchor : "");
+
+      if (navigator.share) {
+        navigator.share({ title: title, url: url }).catch(function () {
+          // User cancelled the share sheet — nothing to do.
+        });
+        return;
+      }
+
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(function () {
+          showShareConfirmation(btn);
+        });
+      }
+    });
+  });
+}
+
+function showShareConfirmation(btn) {
+  var existing = btn.parentElement.querySelector(".share-confirm");
+  if (existing) existing.remove();
+
+  var note = document.createElement("span");
+  note.className = "share-confirm";
+  note.textContent = "Link copied";
+  btn.insertAdjacentElement("afterend", note);
+
+  requestAnimationFrame(function () {
+    note.classList.add("visible");
+  });
+
+  setTimeout(function () {
+    note.classList.remove("visible");
+    setTimeout(function () { note.remove(); }, 400);
+  }, 1600);
 }
