@@ -886,6 +886,16 @@ h1, h2, h3{
   opacity: 1;
 }
 
+.site-footer__social .share-btn{
+  opacity: 0.65;
+  padding: 0;
+}
+
+.site-footer__social .share-btn:hover,
+.site-footer__social .share-btn:focus-visible{
+  opacity: 1;
+}
+
 /* ----------------------------------------------------------------
    13. BREADCRUMB
    (Lacrimae Mundi, Queen Swan, 1001 Nights — piece pages only)
