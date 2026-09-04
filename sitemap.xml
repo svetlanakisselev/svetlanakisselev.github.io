@@ -20,15 +20,69 @@
   </url>
 
   <url>
+    <loc>https://svetlanakisselev.com/queen-swan/QS-parure-crown.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://svetlanakisselev.com/queen-swan/QS-cuff-bracelet.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://svetlanakisselev.com/queen-swan/QS-pendant.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://svetlanakisselev.com/queen-swan/QS-ring.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://svetlanakisselev.com/lacrimae-mundi.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
+    <loc>https://svetlanakisselev.com/lacrimae-mundi/LM-necklace-tears.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://svetlanakisselev.com/lacrimae-mundi/LM-necklace-madonna.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://svetlanakisselev.com/1001-nights.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://svetlanakisselev.com/1001-nights/1001-earrings.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://svetlanakisselev.com/1001-nights/1001-mono-earring.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://svetlanakisselev.com/1001-nights/1001-necklace.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
@@ -40,6 +94,12 @@
   <url>
     <loc>https://svetlanakisselev.com/chronicles.html</loc>
     <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://svetlanakisselev.com/chronicles/1_What-I-Never-Resolved.html</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
