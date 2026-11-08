@@ -53,3 +53,31 @@ function initContactFormWorker() {
 }
 
 document.addEventListener("DOMContentLoaded", initContactFormWorker);
+
+
+/* ================================================================
+   ENQUIRY PRE-FILL
+   The "Enquire about this piece" links on the piece pages point to
+   /contact.html?piece=<short title of the piece>. When that parameter
+   is present, the Message field is pre-filled, so the visitor does not
+   have to say which piece she is writing about. Name and email stay empty.
+   - the text is written with .value (never as HTML)
+   - nothing is overwritten if the field already contains text
+   - without JavaScript the link still opens the contact page
+   ================================================================ */
+
+function prefillEnquiry() {
+  var messageField = document.querySelector('.contact-form textarea[name="message"]');
+  if (!messageField || messageField.value.trim() !== "") return;
+
+  var piece = new URLSearchParams(window.location.search).get("piece");
+  if (!piece) return;
+
+  // plain text only, on one line, with a reasonable length
+  piece = piece.replace(/[\u0000-\u001F\u007F]/g, " ").trim().slice(0, 150);
+  if (!piece) return;
+
+  messageField.value = "I would like to enquire about: " + piece;
+}
+
+document.addEventListener("DOMContentLoaded", prefillEnquiry);
