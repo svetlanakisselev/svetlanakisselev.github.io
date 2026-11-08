@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--
+  ==================================================================
+  PIECE PAGE TEMPLATE
+  Copy this file to create the page of a new creation.
+  ==================================================================
+
+  WHERE THIS FILE LIVES
+  It sits in /_templates/. Folders starting with "_" are ignored by the
+  default GitHub Pages build, so it is NOT published. Do not link it from
+  anywhere and do not add it to sitemap.xml.
+  Check after uploading: https://svetlanakisselev.com/_templates/piece-template.html
+  must return a "404 page not found".
+
+  1. CREATE THE PAGE
+     Copy this file to  /<collection>/<PREFIX>-<slug>.html
+       lacrimae-mundi/   prefix LM-
+       queen-swan/       prefix QS-
+       1001-nights/      prefix 1001-
+     Example: queen-swan/QS-brooch.html
+     Then replace EVERY [PLACEHOLDER] in this file (search for "[" before
+     publishing) and delete this whole instruction block.
+
+  2. IMAGES
+     Photos:   /images/<collection>/<name>.jpg
+               The first photo is also the thumbnail shown on the collection page.
+     Zoom:     /images/<collection>/full/<name>-full.jpg  (optional, found automatically)
+     Open Graph image (1200x630): /images/open-graph/og-<PREFIX>-<slug>.jpg
+     Give every photo a descriptive alt text (type of piece, materials,
+     "one-of-a-kind wearable art by Svetlana Kisselev").
+
+  3. THE COLLECTION PAGE  (/<collection>.html)
+     - add an <article class="piece-card"> block (copy an existing one)
+     - update the sentence "The collection comprises N unique pieces"
+
+  4. SITEMAP
+     Add the new page to /sitemap.xml (priority 0.7, like the other pieces).
+
+  5. ENQUIRE LINKS
+     Two links are included by default: under the title, and after the
+     technical block. [SHORT-TITLE-URL] is the short title of the piece,
+     percent-encoded for the address bar:
+       Procession of One    becomes    Procession%20of%20One
+     (space = %20, apostrophe = %27, em dash = %E2%80%94, double quote = %22)
+     The contact page then pre-fills the message with that short title.
+
+  6. WHEN THE PIECE IS SOLD  (4 small changes)
+     a) Collection page, on its piece-card: inside <div class="piece-card__media">,
+        right after the <img>, add:   <span class="sold-badge">SOLD</span>
+     b) This page, right after </h1>, add:
+            <p class="sold-note">SOLD — no longer available</p>
+     c) This page, first photo: wrap it as shown in the "SOLD VARIANT"
+        comment inside <div class="piece__images"> below.
+     d) This page: delete BOTH Enquire links (the one inside .piece-actions
+        and the whole .piece__enquire block).
+  ==================================================================
+-->
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WFTP65LT');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[SHORT-TITLE] — Svetlana Kisselev</title>
+<meta name="description" content="[META-DESCRIPTION: short title, type of piece, influences, One of a kind, Paris YEAR. 155 characters maximum]">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://svetlanakisselev.com/[COLLECTION-SLUG]/[PREFIX]-[SLUG].html">
+<meta property="og:site_name" content="Svetlana Kisselev">
+<meta property="og:title" content="[SHORT-TITLE] — Svetlana Kisselev">
+<meta property="og:description" content="[OG-DESCRIPTION: one sentence from the narrative. 125 characters maximum]">
+<meta property="og:image" content="https://svetlanakisselev.com/images/open-graph/og-[PREFIX]-[SLUG].jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="[SHORT-TITLE] — Svetlana Kisselev">
+<meta name="twitter:description" content="[OG-DESCRIPTION: same text as og:description]">
+<meta name="twitter:image" content="https://svetlanakisselev.com/images/open-graph/og-[PREFIX]-[SLUG].jpg">
+
+<link rel="stylesheet" href="/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://svetlanakisselev.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Collections", "item": "https://svetlanakisselev.com/collection.html" },
+    { "@type": "ListItem", "position": 3, "name": "[COLLECTION-NAME]", "item": "https://svetlanakisselev.com/[COLLECTION-SLUG].html" },
+    { "@type": "ListItem", "position": 4, "name": "[SHORT-TITLE]", "item": "https://svetlanakisselev.com/[COLLECTION-SLUG]/[PREFIX]-[SLUG].html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "[COLLECTION-NAME] — [NUMERAL]: [TYPE OF PIECE] \"[SHORT-TITLE]\"",
+  "creator": { "@type": "Person", "name": "Svetlana Kisselev", "url": "https://svetlanakisselev.com/" },
+  "url": "https://svetlanakisselev.com/[COLLECTION-SLUG]/[PREFIX]-[SLUG].html",
+  "image": "https://svetlanakisselev.com/images/[COLLECTION-SLUG]/[PHOTO-1].jpg",
+  "material": "[MATERIALS, same wording as the visible text below]",
+  "description": "[ONE-SENTENCE DESCRIPTION]. One of a kind, Paris [YEAR].",
+  "dateCreated": "[YEAR]",
+  "artform": "Wearable sculpture",
+  "isPartOf": { "@type": "CreativeWorkSeries", "name": "[COLLECTION-NAME]", "url": "https://svetlanakisselev.com/[COLLECTION-SLUG].html" }
+}
+</script>
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WFTP65LT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <div data-include="/components/header.html"></div>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/index.html">Home</a> / <a href="/collection.html">Collections</a> / <a href="/[COLLECTION-SLUG].html">[COLLECTION-NAME]</a> / <span>[SHORT-TITLE]</span>
+  </nav>
+
+  <article class="piece-full">
+    <div class="piece__images">
+      <!-- SOLD VARIANT: when the piece is sold, wrap the FIRST photo like this
+           (and delete this comment):
+      <div class="piece__image-wrap">
+        <img class="piece__image" src="/images/[COLLECTION-SLUG]/[PHOTO-1].jpg" alt="[ALT TEXT]">
+        <span class="sold-badge">SOLD</span>
+      </div>
+      -->
+      <img class="piece__image" src="/images/[COLLECTION-SLUG]/[PHOTO-1].jpg" alt="[ALT TEXT]">
+      <img class="piece__image" src="/images/[COLLECTION-SLUG]/[PHOTO-2].jpg" alt="[ALT TEXT]">
+    </div>
+    <div class="piece__label">
+      <span class="eyebrow">[COLLECTION-NAME] — [NUMERAL]</span>
+      <h1>[FULL TITLE OF THE PIECE]</h1>
+      <div class="piece-actions">
+        <button class="share-btn" type="button" aria-label="Share this piece" data-share-title="[SHORT-TITLE] — Svetlana Kisselev">
+          <img src="/images/icons/share.svg" alt="" width="18" height="18">
+        </button>
+        <a class="enter-link" href="/contact.html?piece=[SHORT-TITLE-URL]">Enquire about this piece</a>
+      </div>
+      <p>[NARRATIVE TEXT]</p>
+      <p class="piece__technical">
+        Stylized [TYPE OF PIECE] &middot; One of a Kind &middot; Paris [YEAR]<br>
+        [SHORT DESCRIPTION OF THE PIECE]<br><br>
+        Measurements:<br>
+        [PART]: [W=00 cm, H=00 cm]<br><br>
+        Techniques used: Mixed media<br><br>
+        Description of materials:<br>
+        [MATERIALS]
+      </p>
+
+      <div class="piece__enquire">
+        <a class="enter-link" href="/contact.html?piece=[SHORT-TITLE-URL]">Enquire about this piece</a>
+      </div>
+
+      <div class="piece-full__footer">
+        <button class="share-btn" type="button" aria-label="Share this piece" data-share-title="[SHORT-TITLE] — Svetlana Kisselev">
+          <img src="/images/icons/share.svg" alt="" width="18" height="18">
+        </button>
+        <a class="enter-link" href="/[COLLECTION-SLUG].html">See More from [COLLECTION-NAME]</a>
+      </div>
+    </div>
+  </article>
+
+  <div data-include="/components/footer.html"></div>
+
+<script src="/js/include.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>

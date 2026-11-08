@@ -63,13 +63,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- =================================================================
        PIECE CARDS — compact summary, links to the piece's own page.
-       To add a future piece: copy one <article class="piece-card">
-       block, and create its dedicated page under /1001-nights/.
+       To add a future piece: create its page from _templates/piece-template.html
+       (instructions inside), then copy one <article class="piece-card"> block below.
+       To mark a piece as SOLD: add <span class="sold-badge">SOLD</span> inside its
+       <div class="piece-card__media">, right after the <img> (the template lists
+       the 3 matching changes on the piece's own page).
        ================================================================= -->
   <section class="series" id="thousand-and-one-nights">
 
     <article class="piece-card">
-      <img class="piece-card__thumb" src="images/1001-nights/baroque-relic-earrings-1001-nights.jpg" alt="Orientalist-inspired asymmetrical statement earrings with gold filigree and faceted turquoise glass stones, one-of-a-kind wearable art by Svetlana Kisselev">
+      <div class="piece-card__media">
+        <img class="piece-card__thumb" src="images/1001-nights/baroque-relic-earrings-1001-nights.jpg" alt="Orientalist-inspired asymmetrical statement earrings with gold filigree and faceted turquoise glass stones, one-of-a-kind wearable art by Svetlana Kisselev">
+        <span class="sold-badge">SOLD</span>
+      </div>
       <div class="piece-card__label">
         <span class="eyebrow">1001 Nights — I</span>
         <h3>Inspired by Orientalist Dreams, Asymmetrical Statement Earrings &ldquo;1001 Nights &mdash; An Irresistible World of Excess&rdquo;</h3>
@@ -78,7 +84,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </article>
 
     <article class="piece-card">
-      <img class="piece-card__thumb" src="images/1001-nights/baroque-relic-mono-earring-1001-nights.jpg" alt="Orientalist-inspired gold statement mono earring with faceted turquoise glass stones and dangling gold stars, one-of-a-kind wearable art by Svetlana Kisselev">
+      <div class="piece-card__media">
+        <img class="piece-card__thumb" src="images/1001-nights/baroque-relic-mono-earring-1001-nights.jpg" alt="Orientalist-inspired gold statement mono earring with faceted turquoise glass stones and dangling gold stars, one-of-a-kind wearable art by Svetlana Kisselev">
+      </div>
       <div class="piece-card__label">
         <span class="eyebrow">1001 Nights — II</span>
         <h3>Inspired by Orientalist Dreams, Statement Mono Earring &ldquo;1001 Nights &mdash; An Irresistible World of Excess&rdquo;</h3>
@@ -87,7 +95,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </article>
 
     <article class="piece-card">
-      <img class="piece-card__thumb" src="images/1001-nights/baroque-relic-pendant-1001-nights.jpg" alt="Orientalist-inspired gold statement necklace with faceted glass cabochons and pearl accents, one-of-a-kind wearable art from the 1001 Nights collection by Svetlana Kisselev">
+      <div class="piece-card__media">
+        <img class="piece-card__thumb" src="images/1001-nights/baroque-relic-pendant-1001-nights.jpg" alt="Orientalist-inspired gold statement necklace with faceted glass cabochons and pearl accents, one-of-a-kind wearable art from the 1001 Nights collection by Svetlana Kisselev">
+      </div>
       <div class="piece-card__label">
         <span class="eyebrow">1001 Nights — III</span>
         <h3>Inspired by Orientalist Dreams, Statement Necklace &ldquo;1001 Nights &mdash; Gilded Captivity&rdquo;</h3>

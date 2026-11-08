@@ -63,13 +63,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- =================================================================
        PIECE CARDS — compact summary, links to the piece's own page.
-       To add a future piece: copy one <article class="piece-card">
-       block, and create its dedicated page under /queen-swan/.
+       To add a future piece: create its page from _templates/piece-template.html
+       (instructions inside), then copy one <article class="piece-card"> block below.
+       To mark a piece as SOLD: add <span class="sold-badge">SOLD</span> inside its
+       <div class="piece-card__media">, right after the <img> (the template lists
+       the 3 matching changes on the piece's own page).
        ================================================================= -->
   <section class="series" id="queen-swan">
 
     <article class="piece-card">
-      <img class="piece-card__thumb" src="images/queen-swan/baroque-relic-crown-parure-triptych.jpg" alt="Orthodox-influenced gold transformer crown with detachable pendilia, one-of-a-kind ceremonial headpiece by Svetlana Kisselev">
+      <div class="piece-card__media">
+        <img class="piece-card__thumb" src="images/queen-swan/baroque-relic-crown-parure-triptych.jpg" alt="Orthodox-influenced gold transformer crown with detachable pendilia, one-of-a-kind ceremonial headpiece by Svetlana Kisselev">
+      </div>
       <div class="piece-card__label">
         <span class="eyebrow">Queen Swan — I</span>
         <h3>Orthodox-Influenced Transformer Crown &ldquo;Procession of One&rdquo;</h3>
@@ -78,7 +83,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </article>
 
     <article class="piece-card">
-      <img class="piece-card__thumb" src="images/queen-swan/baroque-relic-cuff-bracelet-queen-swan.jpg" alt="Orthodox-influenced reliquary cuff bracelet shaped as a wearable sacred heart altar, one-of-a-kind jewelry piece">
+      <div class="piece-card__media">
+        <img class="piece-card__thumb" src="images/queen-swan/baroque-relic-cuff-bracelet-queen-swan.jpg" alt="Orthodox-influenced reliquary cuff bracelet shaped as a wearable sacred heart altar, one-of-a-kind jewelry piece">
+      </div>
       <div class="piece-card__label">
         <span class="eyebrow">Queen Swan — II</span>
         <h3>Orthodox-Influenced Reliquary Cuff &ldquo;Sacred Heart&rsquo;s Armor&rdquo;</h3>
@@ -87,7 +94,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </article>
 
     <article class="piece-card">
-      <img class="piece-card__thumb" src="images/queen-swan/baroque-relic-necklace-pendant-queen-swan.jpg" alt="Orthodox-influenced two-tiered reliquary pendant necklace on silk ribbon, devotional wearable art">
+      <div class="piece-card__media">
+        <img class="piece-card__thumb" src="images/queen-swan/baroque-relic-necklace-pendant-queen-swan.jpg" alt="Orthodox-influenced two-tiered reliquary pendant necklace on silk ribbon, devotional wearable art">
+      </div>
       <div class="piece-card__label">
         <span class="eyebrow">Queen Swan — III</span>
         <h3>Orthodox-Influenced Reliquary Devotional Pendant &ldquo;Between Two Worlds&rdquo;</h3>
@@ -96,7 +105,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </article>
 
     <article class="piece-card">
-      <img class="piece-card__thumb" src="images/queen-swan/baroque-relic-ring-queen-swan.jpg" alt="Orthodox-influenced reliquary statement ring with hand-painted glass cabochon, one-of-a-kind wearable art by Svetlana Kisselev">
+      <div class="piece-card__media">
+        <img class="piece-card__thumb" src="images/queen-swan/baroque-relic-ring-queen-swan.jpg" alt="Orthodox-influenced reliquary statement ring with hand-painted glass cabochon, one-of-a-kind wearable art by Svetlana Kisselev">
+      </div>
       <div class="piece-card__label">
         <span class="eyebrow">Queen Swan — IV</span>
         <h3>Orthodox-Influenced Reliquary Statement Ring &ldquo;Devotion on the Hand&rdquo;</h3>

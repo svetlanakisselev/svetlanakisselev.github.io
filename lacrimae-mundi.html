@@ -63,13 +63,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- =================================================================
        PIECE CARDS — compact summary, links to the piece's own page.
-       To add a future piece: copy one <article class="piece-card">
-       block, and create its dedicated page under /lacrimae-mundi/.
+       To add a future piece: create its page from _templates/piece-template.html
+       (instructions inside), then copy one <article class="piece-card"> block below.
+       To mark a piece as SOLD: add <span class="sold-badge">SOLD</span> inside its
+       <div class="piece-card__media">, right after the <img> (the template lists
+       the 3 matching changes on the piece's own page).
        ================================================================= -->
   <section class="series" id="lacrimae-mundi">
 
     <article class="piece-card">
-      <img class="piece-card__thumb" src="images/lacrimae-mundi/baroque-relic-plastron-necklace-lacrimae-mundi.jpg" alt="Sculptural reliquary plastron necklace with African wooden mask and Orthodox-inspired gold filigree, one-of-a-kind wearable art by Svetlana Kisselev">
+      <div class="piece-card__media">
+        <img class="piece-card__thumb" src="images/lacrimae-mundi/baroque-relic-plastron-necklace-lacrimae-mundi.jpg" alt="Sculptural reliquary plastron necklace with African wooden mask and Orthodox-inspired gold filigree, one-of-a-kind wearable art by Svetlana Kisselev">
+      </div>
       <div class="piece-card__label">
         <span class="eyebrow">Lacrimae Mundi — I</span>
         <h3>Influenced by Orthodox Baroque and African Sacred Art Reliquary Plastron Necklace &ldquo;Lacrimae Mundi &mdash; The Tears of the World&rdquo;</h3>
@@ -78,7 +83,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </article>
 
     <article class="piece-card">
-      <img class="piece-card__thumb" src="images/lacrimae-mundi/baroque-relic-plastron-necklace-lacrimae-mundi-v2.jpg" alt="Sculptural reliquary plastron necklace with carved African female mask and Orthodox Baroque gold filigree, 'The Madonna Without Child', one-of-a-kind wearable art by Svetlana Kisselev">
+      <div class="piece-card__media">
+        <img class="piece-card__thumb" src="images/lacrimae-mundi/baroque-relic-plastron-necklace-lacrimae-mundi-v2.jpg" alt="Sculptural reliquary plastron necklace with carved African female mask and Orthodox Baroque gold filigree, 'The Madonna Without Child', one-of-a-kind wearable art by Svetlana Kisselev">
+      </div>
       <div class="piece-card__label">
         <span class="eyebrow">Lacrimae Mundi — II</span>
         <h3>Influenced by Orthodox Baroque and African Sacred Art Reliquary Plastron Necklace &ldquo;Lacrimae Mundi &mdash; The Madonna Without Child&rdquo;</h3>
